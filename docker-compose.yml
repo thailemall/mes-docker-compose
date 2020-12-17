@@ -1,5 +1,13 @@
 version: '3'
 services:
+  rabbit:
+    image: rabbitmq:management
+    volumes: 
+      - ./docker/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - ./docker/enabled_plugins:/etc/rabbitmq/enabled_plugins
+    ports:
+      - 15672:15672
+      - 1883:1883
   discovery:
     image: thailemall/discovery
     container_name: discovery
