@@ -1,5 +1,6 @@
 # mes-docker-compose
 ##  docker/rabbitmq.conf
+###  modify the http://192.168.1.15:8080 as really ip address for   auth_http.user_path, auth_http.vhost_path , auth_http.resource_path and  auth_http.topic_path
 
     loopback_users.guest = false
     listeners.tcp.default = 5672
@@ -26,6 +27,7 @@
 ##  docker/enabled_plugins   
     [rabbitmq_management,rabbitmq_auth_backend_cache,rabbitmq_auth_backend_http,rabbitmq_mqtt].
 ##  docker-compose.yml
+### modify the  HOST_NAME: http://192.168.1.248:80 as the really ip address
     version: "3"
       services:
         rabbit:
