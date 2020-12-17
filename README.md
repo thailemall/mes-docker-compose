@@ -28,7 +28,7 @@
     [rabbitmq_management,rabbitmq_auth_backend_cache,rabbitmq_auth_backend_http,rabbitmq_mqtt].
 ##  docker-compose.yml
 ### modify the  HOST_NAME: http://192.168.1.248:80 as the really ip address
-    version: "3"
+      version: "3"
       services:
         rabbit:
           image: rabbitmq:management
