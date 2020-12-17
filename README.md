@@ -28,45 +28,46 @@
     [rabbitmq_management,rabbitmq_auth_backend_cache,rabbitmq_auth_backend_http,rabbitmq_mqtt].
 ##  docker-compose.yml
 ### modify the  HOST_NAME: http://192.168.1.248:80 as the really ip address
-  version: "3"
-  services:
-    rabbit:
-      image: rabbitmq:management
-      volumes: 
-        - ./docker/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
-        - ./docker/enabled_plugins:/etc/rabbitmq/enabled_plugins
-      ports:
-        - 15672:15672
-        - 1883:1883
-   discovery:
-     image: thailemall/discovery
-     container_name: discovery
-     ports:
-       - "8761:8761"
-   mes:
-     image: thailemall/mes
-     container_name: mes
-     ports:
-       - "8081:8081"
-     environment:
-       EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
-     links:
-       - discovery
-   gateway:
-     image: thailemall/gateway
-     container_name: gateway
-     ports:
-       - "80:80"
-     environment:
-       EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
-       HOST_NAME: http://192.168.1.248:80
-     links:
-       - discovery
-       - mes
- networks:
-   default:
-     external:
-       name: mes-network
+
+      version: "3"
+      services:
+        rabbit:
+          image: rabbitmq:management
+          volumes: 
+            - ./docker/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+            - ./docker/enabled_plugins:/etc/rabbitmq/enabled_plugins
+          ports:
+            - 15672:15672
+            - 1883:1883
+       discovery:
+         image: thailemall/discovery
+         container_name: discovery
+         ports:
+           - "8761:8761"
+       mes:
+         image: thailemall/mes
+         container_name: mes
+         ports:
+           - "8081:8081"
+         environment:
+           EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
+         links:
+           - discovery
+       gateway:
+         image: thailemall/gateway
+         container_name: gateway
+         ports:
+           - "80:80"
+         environment:
+           EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
+           HOST_NAME: http://192.168.1.248:80
+         links:
+           - discovery
+           - mes
+     networks:
+       default:
+         external:
+           name: mes-network
 ## setup
   
     sudo  docker stop mes
