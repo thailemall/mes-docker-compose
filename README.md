@@ -57,12 +57,12 @@
          container_name: gateway
          ports:
            - "80:80"
-        environment:
-          EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
-          HOST_NAME: http://192.168.1.248:80
-        links:
-          - discovery
-          - mes
+         environment:
+           EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
+           HOST_NAME: http://192.168.1.248:80
+         links:
+           - discovery
+           - mes
     networks:
       default:
         external:
