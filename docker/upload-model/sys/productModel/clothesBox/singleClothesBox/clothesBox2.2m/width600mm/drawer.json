@@ -1,0 +1,98 @@
+{
+ "name":"抽屉",
+ "type":"Unit",
+  "properties": {
+    "width": {
+      "label": "宽度",
+      "value": "600.0",
+      "type": "DOUBLE"
+    },
+    "depth": {
+      "label": "深度",
+      "value": "550",
+      "type": "DOUBLE"
+    },
+    "drawerHeight": {
+      "label": "高度",
+      "value": "200.0",
+      "type": "DOUBLE"
+    },
+    "thickness": {
+      "label": "厚度",
+      "value": "18.0",
+      "type": "DOUBLE"
+    }
+  },
+ "elements":{
+     "e1":  {
+          "name":"坚板",
+          "thickness":"thickness",
+           "type":"VLayer",
+           "profile": {
+              "type":"Rect",
+              "width":"depth-2*thickness",
+              "height":"drawerHeight"
+           }
+       },
+     "e2":{
+          "name":"前后板",
+          "thickness":"thickness",
+           "type":"HVLayer",
+           "profile": {
+              "type":"Rect",
+              "width":"width",
+              "height":"drawerHeight"
+              }
+       },
+       "e3": {
+              "name":"底板",
+              "thickness":"thickness",
+              "type":"HLayer",
+               "profile": {
+                  "type":"Rect",
+                  "width":"width",
+                  "height":"depth"
+               }
+         }
+  },
+  "nodes":[
+    {
+ 
+      "ref": "e3"
+    },
+    {
+    
+      "ref": "e2",
+      "position": {
+        "y": "thickness",
+        "z": "-thickness"
+      }
+    },
+    {
+ 
+      "ref": "e1",
+      "position": {
+        "x": "0",
+        "y": "thickness",
+        "z": "-thickness"
+      }
+    },
+    {
+
+      "ref": "e1",
+      "position": {
+        "x": "width-thickness",
+        "y": "thickness",
+        "z": "-thickness"
+      }
+    },
+    {
+   
+      "ref": "e2",
+      "position": {
+        "y": "thickness",
+        "z": "-depth"
+      }
+    }
+  ]
+}

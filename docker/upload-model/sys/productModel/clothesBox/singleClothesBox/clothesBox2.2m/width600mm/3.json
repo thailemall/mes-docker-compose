@@ -1,0 +1,15 @@
+ {
+	"name":"横板",
+  "properties":{
+    "width":{"label":"宽度","value":"600.0","type":"DOUBLE"},
+    "height":{"label":"高度","value":"2200.0","type":"DOUBLE"},
+    "thickness":{"label":"厚度","value":"18.0","type":"DOUBLE"}
+  },
+  "profile": {
+     "type":"Rect",
+     "width":"width",
+     "height":"height"
+  },
+  "thickness":"thickness",
+  "type":"HLayer"
+}
