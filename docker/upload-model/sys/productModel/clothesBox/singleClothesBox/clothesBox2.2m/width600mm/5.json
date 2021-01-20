@@ -1,5 +1,5 @@
  {
-	"name":"衣柜单柜2.2m-600#3",
+	"name":"test",
 	"type":"Unit",
 	"properties":{
 		"width":{"label":"宽度","value":"600.0","type":"DOUBLE"},
@@ -14,17 +14,18 @@
     "drawer#1": {
       "url": "./drawer.json",
       "parameters": {
-        "width": "width-2*thickness",
-        "depth": "depth",
+        "width":  "width-2*thickness",
+        "depth":  "depth",
         "height": "drawerHeight",
         "thickness": "thickness"
+    
       },
       "type": "URLElement"
     },
     "vlayer": {
       "url": "./2.json",
       "parameters": {
-        "width": "depth",
+        "width": "width",
         "height": "height"
       },
 
@@ -33,7 +34,15 @@
     "hlayer": {
       "url": "./3.json",
       "parameters": {
-        "width":  "width-2*thickness",
+        "width": "width-2*thickness",
+        "height": "depth"
+      },
+      "type": "URLElement"
+    },
+    "hlayer1": {
+      "url": "./3.json",
+      "parameters": {
+        "width": "width",
         "height": "depth"
       },
       "type": "URLElement"
@@ -43,77 +52,22 @@
       "parameters": {
         "width": "width-2*thickness",
         "height": "height"
-
       },
       "type": "URLElement"
     }
   },
   "nodes": [
     {
-      "ref": "vlayer"
-    },
-    {
-      "ref": "vlayer",
-      "position": { "x": "width-thickness" }
-    },
-    {
-      "ref": "vhlayer",
+      "ref": "hlayer1",
       "position": {
-        "x": "thickness",
-        "z": "-depth"
+        "x": "thickness"
       }
     },
     {
       "ref": "hlayer",
       "position": {
         "x": "thickness",
-        "y": "80"
-      }
-    },
-    {
-      "ref": "hlayer",
-      "position": {
-        "x": "thickness",
-        "y": "80+18+694"
-      }
-    },
-    {
-      "ref": "hlayer",
-      "position": {
-        "x": "thickness",
-        "y": "height-thickness"
-      }
-    },
-    {
-      "ref": "drawer#1",
-      "position": {
-        "x": "thickness",
-        "y": "98",
-        "z": "90"
-      }
-    },
-    {
-      "ref": "drawer#1",
-      "position": {
-        "x": "thickness",
-        "y": "drawerHeight+98",
-        "z": "60"
-      }
-    },
-    {
-      "ref": "drawer#1",
-      "position": {
-        "x": "thickness",
-        "y": "2*drawerHeight+98",
-        "z": "30"
-      }
-    },
-    {
-      "ref": "drawer#1",
-      "position": {
-        "x": "thickness",
-        "y": "3*drawerHeight+98",
-        "z": "10"
+        "z": "80"
       }
     }
   ]

@@ -12,7 +12,7 @@
       "value": "550",
       "type": "DOUBLE"
     },
-    "drawerHeight": {
+    "height": {
       "label": "高度",
       "value": "200.0",
       "type": "DOUBLE"
@@ -21,6 +21,11 @@
       "label": "厚度",
       "value": "18.0",
       "type": "DOUBLE"
+    },
+    "material": {
+      "label": "材料",
+      "value": "",
+      "type": "MATERIAL"
     }
   },
  "elements":{
@@ -28,21 +33,21 @@
           "name":"坚板",
           "thickness":"thickness",
            "type":"VLayer",
-           "profile": {
-              "type":"Rect",
-              "width":"depth-2*thickness",
-              "height":"drawerHeight"
-           }
+      "profile": {
+        "type": "Rect",
+        "width": "depth-2*thickness",
+        "height": "height-thickness"
+      }
        },
      "e2":{
           "name":"前后板",
           "thickness":"thickness",
            "type":"HVLayer",
-           "profile": {
-              "type":"Rect",
-              "width":"width",
-              "height":"drawerHeight"
-              }
+      "profile": {
+        "type": "Rect",
+        "width": "width",
+        "height": "height-thickness"
+      }
        },
        "e3": {
               "name":"底板",
