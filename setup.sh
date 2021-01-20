@@ -8,4 +8,4 @@ docker rmi thailemall/mes:latest
 docker rmi thailemall/gateway:latest
 docker rmi thailemall/discovery:latest
 docker network create mes-network
-docker-compose up 
+docker-compose up

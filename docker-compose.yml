@@ -1,19 +1,5 @@
 version: '3'
 services:
-  discovery:
-    image: thailemall/discovery
-    container_name: discovery
-    ports:
-      - "8761:8761"
-  auth: 
-    image: thailemall/jinnalee-auth
-    container_name: auth
-    ports:
-      - "8070:8070"
-    environment:
-      EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
-    links:
-      - discovery
   rabbit:
     image: rabbitmq:management
     container_name: rabbit
@@ -25,8 +11,21 @@ services:
       - 5672:5672
       - 1883:1883
     links:
+      - gateway
+  auth: 
+    image: thailemall/jinnalee-auth
+    container_name: auth
+    ports:
+      - "8070:8070"
+    environment:
+      EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
+    links:
       - discovery
-      - auth
+  discovery:
+    image: thailemall/discovery
+    container_name: discovery
+    ports:
+      - "8761:8761"
   mes:
     image: thailemall/mes
     container_name: mes
@@ -45,7 +44,8 @@ services:
       - "80:80"
     environment:
       EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
-      RABBITMQ_HOST: //rabbit
+
+      RABBITMQ_HOST: rabbit
       HOST_NAME: http://192.168.1.248:80
     links:
       - discovery
