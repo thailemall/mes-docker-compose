@@ -33,7 +33,7 @@
       services:
         rabbit:
           image: rabbitmq:management
-          volumes: 
+          volumes:
             - ./docker/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
             - ./docker/enabled_plugins:/etc/rabbitmq/enabled_plugins
           ports:
@@ -69,7 +69,7 @@
          external:
            name: mes-network
 ## setup
-  
+
     sudo  docker stop mes
     sudo  docker stop gateway
     sudo  docker stop discovery
@@ -81,3 +81,57 @@
     sudo  docker rmi thailemall/discovery:latest
     sudo  docker network create mes-network
     sudo  docker-compose up
+
+## design data format
+  Node data format:
+  {
+    "name":"",
+    "type":"Node",
+    "properties":{
+    	"width":{"label":"宽度","value":"600.0"},
+    	"depth":{"label":"深度","value":"550"},
+    	"height":{"label":"高度","value":"2200.0"},
+    	"thickness":{"label":"厚度","value":"18.0"},
+    	"backThickness":{"label":"背板厚度","value":"18.0"},
+    	"baseHeight":{"label":"基层高度","value":"80"},
+    	"drawerHeight":{"label":"基层高度","value":"174"}
+    },
+    "elements":{
+      "id1":{
+        "name":"...",
+        "properties":{
+          "width":{"label":"宽度","value":"600.0"},
+      	  "height":{"label":"深度","value":"550"},
+          } ,
+        "type": "HVLayer",
+        "profile":
+        {
+             "type": "Rect",
+             "width": "width",
+             "height": "height"
+        },
+        type:"HLayer"
+      },
+      "id2":{
+        "type":"URLElement"
+        url:"http://...."
+      },
+      "id3":{
+        "type":"Node"
+        .......
+      }
+    }
+    "nodes":[
+      {
+        "id":"node1",
+        "discription":"",
+        "ref":"id1",
+        "properties":{},
+        "transforms":[
+          {"type": "translate","x":"","y":"","z":""},
+          {"type": "rotation","x":"","y":"","z":""}
+          ...
+        ]
+      },
+    ]
+  }

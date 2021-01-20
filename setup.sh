@@ -1,3 +1,5 @@
+#!/bin/bash
+
 docker stop mes
 docker stop gateway
 docker stop discovery
@@ -8,4 +10,4 @@ docker rmi thailemall/mes:latest
 docker rmi thailemall/gateway:latest
 docker rmi thailemall/discovery:latest
 docker network create mes-network
-docker-compose up 
+docker-compose up
