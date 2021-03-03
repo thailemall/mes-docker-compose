@@ -1,0 +1,11 @@
+version: '3'
+services:
+  auth:
+    image: thailemall/jinnalee-auth
+    container_name: auth
+    ports:
+      - "8070:8070"
+networks:
+  default:
+    external:
+      name: account-network
