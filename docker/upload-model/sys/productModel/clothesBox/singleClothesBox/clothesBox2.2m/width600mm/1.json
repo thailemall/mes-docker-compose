@@ -1,14 +1,28 @@
  {
-	"name":"衣柜单柜2.2m-600#3",
+	"name":{"defaultText":"衣柜单柜2.2m-600#3"},
 	"type":"Unit",
 	"properties":{
-		"width":{"label":"宽度","value":"600.0","type":"DOUBLE"},
-		"depth":{"label":"深度","value":"600","type":"DOUBLE"},
-		"height":{"label":"高度","value":"2200.0","type":"DOUBLE"},
-		"thickness":{"label":"厚度","value":"18.0","type":"DOUBLE"},
-		"backThickness":{"label":"背板厚度","value":"18.0","type":"DOUBLE"},
-		"baseHeight":{"label":"基层高度","value":"80","type":"DOUBLE"},
-		"drawerHeight":{"label":"抽屉高度","value":"170","type":"DOUBLE"}
+		"width":{
+      "label":{"defaultText":"宽度"},
+      "value":"600.0","type":"DOUBLE"},
+		"depth":{
+      "label":{"defaultText":"深度"},
+      "value":"600","type":"DOUBLE"},
+		"height":{
+      "label":{"defaultText":"高度"},
+      "value":"2200.0","type":"DOUBLE"},
+		"thickness":{
+      "label":{"defaultText":"厚度"},
+      "value":"18.0","type":"DOUBLE"},
+		"backThickness":{
+      "label":{"defaultText":"背板厚度"},
+      "value":"18.0","type":"DOUBLE"},
+		"baseHeight":{
+      "label":{"defaultText":"基层高度"},
+      "value":"80","type":"DOUBLE"},
+		"drawerHeight":{
+      "label":{"defaultText":"抽屉高度"},
+      "value":"170","type":"DOUBLE"}
 	},
   "elements": {
     "drawer#1": {

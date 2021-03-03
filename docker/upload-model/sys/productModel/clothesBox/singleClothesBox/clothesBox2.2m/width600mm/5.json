@@ -1,14 +1,28 @@
  {
-	"name":"test",
+	"name":{"defaultText":"test"},
 	"type":"Unit",
 	"properties":{
-		"width":{"label":"宽度","value":"600.0","type":"DOUBLE"},
-		"depth":{"label":"深度","value":"600","type":"DOUBLE"},
-		"height":{"label":"高度","value":"2200.0","type":"DOUBLE"},
-		"thickness":{"label":"厚度","value":"18.0","type":"DOUBLE"},
-		"backThickness":{"label":"背板厚度","value":"18.0","type":"DOUBLE"},
-		"baseHeight":{"label":"基层高度","value":"80","type":"DOUBLE"},
-		"drawerHeight":{"label":"抽屉高度","value":"170","type":"DOUBLE"}
+		"width":{
+      "label":{"defaultText":"width", "texts":{"en":"width","cn":"宽度"}},
+      "value":"600.0","type":"DOUBLE"},
+		"depth":{
+      "label": {"defaultText":"depth","texts":{"en":"depth","cn":"深度"}},
+      "value":"600","type":"DOUBLE"},
+		"height":{
+      "label": {"defaultText":"height","texts":{"en":"height","cn":"高度"}},
+      "value":"2200.0","type":"DOUBLE"},
+		"thickness":{
+      "label": {"defaultText":"thickness","texts":{"en":"thickness","cn":"厚度"}},
+      "value":"18.0","type":"DOUBLE"},
+		"backThickness":{
+      "label": {"defaultText":"back thickness","texts":{"en":"back thickness","cn":"背板厚度"}},
+      "value":"18.0","type":"DOUBLE"},
+		"baseHeight":{
+      "label":{"defaultText":"Base Height","texts":{"en":"Base Height","cn":"基层高度"}},
+      "value":"80","type":"DOUBLE"},
+		"drawerHeight":{
+      "label":{"defaultText":"Drawer Height","texts":{"en":"Drawer Height","cn":"抽屉高度"}},
+      "value":"170","type":"DOUBLE"}
 	},
   "elements": {
     "drawer#1": {
@@ -18,7 +32,7 @@
         "depth":  "depth",
         "height": "drawerHeight",
         "thickness": "thickness"
-    
+
       },
       "type": "URLElement"
     },
