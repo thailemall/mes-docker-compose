@@ -1,9 +1,26 @@
 version: '3'
 services:
+  discovery:
+    image: thailemall/discovery
+    container_name: discovery
+    ports:
+      - "8761:8761"
+  gateway:
+    image: thailemall/gateway
+    container_name: gateway
+    ports:
+      - "80:80"
+    environment:
+      EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
+      RABBITMQ_HOST: rabbit
+      HOST_NAME: http://192.168.1.210:80
+      ACCOUNT_SERVICE_URL: http://192.168.1.15:8070
+    links:
+      - discovery
   rabbit:
     image: rabbitmq:management
     container_name: rabbit
-    volumes: 
+    volumes:
       - ./docker/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
       - ./docker/enabled_plugins:/etc/rabbitmq/enabled_plugins
     ports:
@@ -12,20 +29,6 @@ services:
       - 1883:1883
     links:
       - gateway
-  auth: 
-    image: thailemall/jinnalee-auth
-    container_name: auth
-    ports:
-      - "8070:8070"
-    environment:
-      EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
-    links:
-      - discovery
-  discovery:
-    image: thailemall/discovery
-    container_name: discovery
-    ports:
-      - "8761:8761"
   mes:
     image: thailemall/mes
     container_name: mes
@@ -35,24 +38,12 @@ services:
       EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
       RABBITMQ_HOST: rabbit
       MQTT_URL: tcp://rabbit:1883
+    volumes:
+      - ./docker/upload-model:/var/storage/model
+      - ./docker/design:/var/storage/design
     links:
       - discovery
-  gateway:
-    image: thailemall/gateway
-    container_name: gateway
-    ports:
-      - "80:80"
-    environment:
-      EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
-
-      RABBITMQ_HOST: rabbit
-      HOST_NAME: http://192.168.1.248:80
-    links:
-      - discovery
-      - mes
-
 networks:
   default:
     external:
       name: mes-network
-
