@@ -24,12 +24,12 @@
       "label":{"defaultText":"抽屉高度"},
       "value":"170","type":"DOUBLE"},
       "material": {
-        "label": {"defaultText":"material", "texts":{"en":"material","cn":"材料"}},
+        "label": {"defaultText":"material", "texts":{"en":"material","zh-CN":"材料"}},
         "value": "",
         "type": "MATERIAL"
       },
       "processSegment":{
-        "label":  {"defaultText":"process Segment","texts":{"en":"process Segment","cn":"Process Segment"}},
+        "label":  {"defaultText":"process Segment","texts":{"en":"process Segment","zh-CN":"Process Segment"}},
         "value": "",
         "type": "PROCESS"
       }

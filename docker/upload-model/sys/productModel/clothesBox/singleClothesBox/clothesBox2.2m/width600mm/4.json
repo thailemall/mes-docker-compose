@@ -1,22 +1,22 @@
  {
-	"name":{"defaultText":"back-font-layer","texts":{"en":"back-font-layer","cn":"前后板"}},
+	"name":{"defaultText":"back-font-layer","texts":{"en":"back-font-layer","zh-CN":"前后板"}},
   "properties":{
     "width":{
-      "label":{"defaultText":"width", "texts":{"en":"width","cn":"宽度"}},
+      "label":{"defaultText":"width", "texts":{"en":"width","zh-CN":"宽度"}},
       "value":"600.0","type":"DOUBLE"},
     "height":{
-      "label": {"defaultText":"height","texts":{"en":"height","cn":"高度"}},
+      "label": {"defaultText":"height","texts":{"en":"height","zh-CN":"高度"}},
       "value":"2200.0","type":"DOUBLE"},
       "thickness":{
-        "label": {"defaultText":"thickness","texts":{"en":"thickness","cn":"厚度"}},
+        "label": {"defaultText":"thickness","texts":{"en":"thickness","zh-CN":"厚度"}},
         "value":"18.0","type":"DOUBLE"},
         "material": {
-          "label": {"defaultText":"material", "texts":{"en":"material","cn":"材料"}},
+          "label": {"defaultText":"material", "texts":{"en":"material","zh-CN":"材料"}},
           "value": "",
           "type": "MATERIAL"
         },
         "processSegment":{
-          "label":  {"defaultText":"process Segment","texts":{"en":"process Segment","cn":"Process Segment"}},
+          "label":  {"defaultText":"process Segment","texts":{"en":"process Segment","zh-CN":"Process Segment"}},
           "value": "",
           "type": "PROCESS"
         }

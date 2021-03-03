@@ -3,33 +3,33 @@
 	"type":"Unit",
 	"properties":{
 		"width":{
-      "label":{"defaultText":"width", "texts":{"en":"width","cn":"宽度"}},
+      "label":{"defaultText":"width", "texts":{"en":"width","zh-CN":"宽度"}},
       "value":"600.0","type":"DOUBLE"},
 		"depth":{
-      "label": {"defaultText":"depth","texts":{"en":"depth","cn":"深度"}},
+      "label": {"defaultText":"depth","texts":{"en":"depth","zh-CN":"深度"}},
       "value":"600","type":"DOUBLE"},
 		"height":{
-      "label": {"defaultText":"height","texts":{"en":"height","cn":"高度"}},
+      "label": {"defaultText":"height","texts":{"en":"height","zh-CN":"高度"}},
       "value":"2200.0","type":"DOUBLE"},
 		"thickness":{
-      "label": {"defaultText":"thickness","texts":{"en":"thickness","cn":"厚度"}},
+      "label": {"defaultText":"thickness","texts":{"en":"thickness","zh-CN":"厚度"}},
       "value":"18.0","type":"DOUBLE"},
 		"backThickness":{
-      "label": {"defaultText":"back thickness","texts":{"en":"back thickness","cn":"背板厚度"}},
+      "label": {"defaultText":"back thickness","texts":{"en":"back thickness","zh-CN":"背板厚度"}},
       "value":"18.0","type":"DOUBLE"},
 		"baseHeight":{
-      "label":{"defaultText":"Base Height","texts":{"en":"Base Height","cn":"基层高度"}},
+      "label":{"defaultText":"Base Height","texts":{"en":"Base Height","zh-CN":"基层高度"}},
       "value":"80","type":"DOUBLE"},
 		"drawerHeight":{
-      "label":{"defaultText":"Drawer Height","texts":{"en":"Drawer Height","cn":"抽屉高度"}},
+      "label":{"defaultText":"Drawer Height","texts":{"en":"Drawer Height","zh-CN":"抽屉高度"}},
       "value":"170","type":"DOUBLE"},
       "material": {
-        "label": {"defaultText":"material", "texts":{"en":"material","cn":"材料"}},
+        "label": {"defaultText":"material", "texts":{"en":"material","zh-CN":"材料"}},
         "value": "",
         "type": "MATERIAL"
       },
       "processSegment":{
-        "label":  {"defaultText":"process Segment","texts":{"en":"process Segment","cn":"Process Segment"}},
+        "label":  {"defaultText":"process Segment","texts":{"en":"process Segment","zh-CN":"Process Segment"}},
         "value": "",
         "type": "PROCESS"
       }
