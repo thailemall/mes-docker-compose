@@ -23,12 +23,12 @@
       "type": "DOUBLE"
     },
     "material": {
-      "label": {"defaultText":"", "texts":{"en":"material","cn":"材料"}},
+      "label": {"defaultText":"material", "texts":{"en":"material","cn":"材料"}},
       "value": "",
       "type": "MATERIAL"
     },
     "processSegment":{
-      "label":  {"defaultText":"","texts":{"en":"process Segment","cn":"Process Segment"},
+      "label":  {"defaultText":"process Segment","texts":{"en":"process Segment","cn":"Process Segment"}},
       "value": "",
       "type": "PROCESS"
     }
@@ -43,8 +43,8 @@
             "width": "depth-2*thickness",
             "height": "height-thickness"
           },
-          "material":"{material}",
-          "processSegment":"{processSegment}"
+          "material":"material",
+          "processSegment":"processSegment"
        },
      "e2":{
           "name":{"defaultText":"back-font-layer","texts":{"en":"back-font-layer","cn":"前后板"}},
@@ -55,8 +55,8 @@
             "width": "width",
             "height": "height-thickness"
           },
-          "material":"{material}",
-          "processSegment":"{processSegment}"
+          "material":"material",
+          "processSegment":"processSegment"
        },
        "e3": {
               "name":{"defaultText":"Bottom-Layer","texts":{"en":"bottom-Layer","cn":"底板"}},
@@ -67,8 +67,8 @@
                   "width":"width",
                   "height":"depth"
                },
-              "material":"{material}",
-              "processSegment":"{processSegment}"
+              "material":"material",
+              "processSegment":"processSegment"
          }
   },
   "nodes":[

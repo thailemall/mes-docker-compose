@@ -9,7 +9,17 @@
       "value":"2200.0","type":"DOUBLE"},
       "thickness":{
         "label": {"defaultText":"thickness","texts":{"en":"thickness","cn":"厚度"}},
-        "value":"18.0","type":"DOUBLE"}
+        "value":"18.0","type":"DOUBLE"},
+        "material": {
+          "label": {"defaultText":"material", "texts":{"en":"material","cn":"材料"}},
+          "value": "",
+          "type": "MATERIAL"
+        },
+        "processSegment":{
+          "label":  {"defaultText":"process Segment","texts":{"en":"process Segment","cn":"Process Segment"}},
+          "value": "",
+          "type": "PROCESS"
+        }
   },
   "profile": {
      "type":"Rect",
@@ -17,5 +27,7 @@
      "height":"height"
   },
   "thickness":"thickness",
-  "type":"HVLayer"
+  "type":"HVLayer",
+  "material":"material",
+  "processSegment":"processSegment"
 }

@@ -22,7 +22,17 @@
       "value":"80","type":"DOUBLE"},
 		"drawerHeight":{
       "label":{"defaultText":"Drawer Height","texts":{"en":"Drawer Height","cn":"抽屉高度"}},
-      "value":"170","type":"DOUBLE"}
+      "value":"170","type":"DOUBLE"},
+      "material": {
+        "label": {"defaultText":"material", "texts":{"en":"material","cn":"材料"}},
+        "value": "",
+        "type": "MATERIAL"
+      },
+      "processSegment":{
+        "label":  {"defaultText":"process Segment","texts":{"en":"process Segment","cn":"Process Segment"}},
+        "value": "",
+        "type": "PROCESS"
+      }
 	},
   "elements": {
     "drawer#1": {
@@ -31,8 +41,9 @@
         "width":  "width-2*thickness",
         "depth":  "depth",
         "height": "drawerHeight",
-        "thickness": "thickness"
-
+        "thickness": "thickness",
+        "material":"material",
+        "processSegment":"processSegment"
       },
       "type": "URLElement"
     },
@@ -40,7 +51,9 @@
       "url": "./2.json",
       "parameters": {
         "width": "width",
-        "height": "height"
+        "height": "height",
+        "material":"material",
+        "processSegment":"processSegment"
       },
 
       "type": "URLElement"
@@ -49,7 +62,9 @@
       "url": "./3.json",
       "parameters": {
         "width": "width-2*thickness",
-        "height": "depth"
+        "height": "depth",
+        "material":"material",
+        "processSegment":"processSegment"
       },
       "type": "URLElement"
     },
@@ -57,7 +72,9 @@
       "url": "./3.json",
       "parameters": {
         "width": "width",
-        "height": "depth"
+        "height": "depth",
+        "material":"material",
+        "processSegment":"processSegment"
       },
       "type": "URLElement"
     },
@@ -65,7 +82,9 @@
       "url": "./4.json",
       "parameters": {
         "width": "width-2*thickness",
-        "height": "height"
+        "height": "height",
+        "material":"material",
+        "processSegment":"processSegment"
       },
       "type": "URLElement"
     }
