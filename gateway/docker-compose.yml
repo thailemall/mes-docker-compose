@@ -1,0 +1,18 @@
+version: '3'
+services:
+  gateway:
+    image: thailemall/gateway
+    container_name: gateway
+    ports:
+      - "80:80"
+    environment:
+      EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
+      RABBITMQ_HOST: rabbit
+      HOST_NAME: http://192.168.1.210:80
+      ACCOUNT_SERVICE_URL: http://192.168.1.15:8070
+    links:
+      - discovery
+networks:
+  default:
+    external:
+      name: mes-network

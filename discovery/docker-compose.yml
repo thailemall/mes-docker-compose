@@ -1,0 +1,11 @@
+version: '3'
+services:
+  discovery:
+    image: thailemall/discovery
+    container_name: discovery
+    ports:
+      - "8761:8761"
+networks:
+  default:
+    external:
+      name: mes-network

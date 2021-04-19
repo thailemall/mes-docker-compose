@@ -1,0 +1,144 @@
+		   {
+		   "name":"衣柜单柜2.2m-450mm#3",
+		    "type":"Model",
+			"properties":{
+			"width":{"label":"宽度","value":"600.0"},
+			"depth":{"label":"深度","value":"550"},
+			"height":{"label":"高度","value":"2200.0"},
+			"thickness":{"label":"厚度","value":"18.0"},
+			"backThickness":{"label":"背板厚度","value":"18.0"},
+			"baseHeight":{"label":"基层高度","value":"80"},
+			"drawerHeight":{"label":"基层高度","value":"174"}
+			},
+			"children":[
+			             {
+			                  "name":"坚板组",
+			                  "type":"MulElement",
+			                 "items":[
+			                          {"position":{"x":"0"}},
+			                          {"position":{"x":"width-thickness"}}
+			                         ],
+			         
+			                  "element":{
+				                  "name":"坚板",
+				                  "thickness":"thickness",
+				                   "position":{"x":"width-thickness"},
+					               "type":"VLayer",
+					               "profile": {
+					                  "type":"Rect",
+					                  "width":"depth",
+					                  "height":"height"
+					               }
+			                  }
+			                
+			             },
+			              {
+			                  "name":"背板",
+			                  "thickness":"thickness",
+				               "type":"HVLayer",
+				               "profile": {
+				                  "type":"Rect",
+				                  "width":"width-2*thickness",
+				                  "height":"height-thickness"
+				               }
+			             },
+			              {
+			                  "name":"多层板",
+				              "type":"MulElement",
+				              "items":[{"position":{"y":"baseHeight+thickness"}},
+				                        {"position":{"y":"baseHeight+thickness+drawerHeight"}},
+				                        {"position":{"y":"baseHeight+thickness+2*drawerHeight"}},
+				                        {"position":{"y":"baseHeight+thickness+3*drawerHeight"}},
+				                        {"position":{"y":"baseHeight+thickness+4*drawerHeight"}},
+				                        {"position":{"y":"height-thickness"}}
+				                         ],
+				              "element":{
+				                  "type":"HLayer",
+				                  "thickness":"thickness",
+				                  "profile": {
+				                  "type":"Rect",
+				                  "width":"width-2*thickness",
+				                  "height":"depth-thickness"
+				               }
+				              }
+				              
+			             },
+			             {
+			                  "name":"吊杆",
+			                  "type":"Component",
+			                  "geometries":[{
+				                  "type":"Extrude",
+				                   "profile": {
+					                  "type":"Circle",
+					                  "radius":"20"
+				                   },
+					              "depth":"width-2*thickness"
+			                  }]
+			             },
+			             {
+			                  "name":"抽屉组",
+				              "type":"MulElement",
+				               "items":[{"position":{"y":"baseHeight+thickness"}},
+				                        {"position":{"y":"baseHeight+thickness+drawerHeight"}},
+				                        {"position":{"y":"baseHeight+thickness+2*drawerHeight"}},
+				                        {"position":{"y":"baseHeight+thickness+3*drawerHeight"}}
+				                         ],
+				               "element":{
+				                  "name":"抽屉",
+				                  "type":"Unit",
+				                  "position":{"x":"thickness"},
+				                  "children":[
+				                     {
+						                  "name":"坚板组",
+							               "type":"MulElement",
+							                "items":[
+							                            {"position":{"x":"0"}},
+								                        {"position":{"x":"width-2*thickness"}}
+								                     ] ,
+							               "element":{
+								              "name":"坚板",
+							                  "thickness":"thickness",
+								               "type":"VLayer",
+								               "profile": {
+								                  "type":"Rect",
+								                  "width":"depth-2*thickness",
+								                  "height":"drawerHeight-2"
+								               }
+							               }
+							              
+						             },
+						              {
+						                  "name":"前后板组",
+							               "type":"MulElement",
+							                "items":[
+							                            {"position":{"z":"0"}},
+								                        {"position":{"z":"width-2*thickness"}}
+								                     ] ,
+							               "element":{
+								              "name":"前后板",
+							                  "thickness":"thickness",
+								               "type":"HVLayer",
+								               "profile": {
+								                  "type":"Rect",
+								                  "width":"width-2*thickness",
+								                  "height":"drawerHeight-2"
+								               }
+							               }
+							              
+						             },
+						             {
+						                  "name":"底板",
+						                  "thickness":"thickness",
+							              "type":"HLayers",
+							              "position":{"x":"0","y":"height-thickness","z":"0"},
+							                "profile": {
+							                  "type":"Rect",
+							                  "width":"width",
+							                  "height":"depth"
+							               }
+						             }
+							        ]
+				               }
+			             }
+			          ]
+			 }

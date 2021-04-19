@@ -1,0 +1,36 @@
+ {
+	"name":{"defaultText":"vlayer", "texts":{"en":"vlayer","zh-CN":"竖板"}},
+  "properties":{
+    "width":{
+      "label":{"defaultText":"width", "texts":{"en":"width","zh-CN":"宽度"}},
+      "value":"600.0",
+      "type":"DOUBLE"},
+    "height":{
+      "label": {"defaultText":"height","texts":{"en":"height","zh-CN":"高度"}},
+      "value":"2200.0",
+      "type":"DOUBLE"},
+    "thickness":{
+      "label": {"defaultText":"thickness","texts":{"en":"thickness","zh-CN":"厚度"}},
+      "value":"18.0",
+      "type":"DOUBLE"},
+      "processSegment":{
+        "label":  {"defaultText":"process Segment","texts":{"en":"process Segment","zh-CN":"Process Segment"}},
+        "value": "",
+        "type": "PROCESS"
+      },
+      "material": {
+        "label": {"defaultText":"material", "texts":{"en":"material","zh-CN":"材料"}},
+        "value": "",
+        "type": "MATERIAL"
+      },
+  },
+  "profile": {
+     "type":"Rect",
+     "width":"width",
+     "height":"height"
+  },
+  "thickness":"thickness",
+  "type":"VLayer",
+  "processSegment":"processSegment",
+  "material":"material",
+}

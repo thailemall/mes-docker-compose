@@ -1,0 +1,151 @@
+ {
+	"name":{"defaultText":"衣柜单柜2.2m-600#3"},
+	"type":"Unit",
+	"properties":{
+		"width":{
+      "label":{"defaultText":"宽度"},
+      "value":"600.0","type":"DOUBLE"},
+		"depth":{
+      "label":{"defaultText":"深度"},
+      "value":"600","type":"DOUBLE"},
+		"height":{
+      "label":{"defaultText":"高度"},
+      "value":"2200.0","type":"DOUBLE"},
+		"thickness":{
+      "label":{"defaultText":"厚度"},
+      "value":"18.0","type":"DOUBLE"},
+		"backThickness":{
+      "label":{"defaultText":"背板厚度"},
+      "value":"18.0","type":"DOUBLE"},
+		"baseHeight":{
+      "label":{"defaultText":"基层高度"},
+      "value":"80","type":"DOUBLE"},
+		"drawerHeight":{
+      "label":{"defaultText":"抽屉高度"},
+      "value":"170","type":"DOUBLE"},
+      "material": {
+        "label": {"defaultText":"material", "texts":{"en":"material","zh-CN":"材料"}},
+        "value": "",
+        "type": "MATERIAL"
+      },
+      "processSegment":{
+        "label":  {"defaultText":"process Segment","texts":{"en":"process Segment","zh-CN":"Process Segment"}},
+        "value": "",
+        "type": "PROCESS"
+      }
+	},
+  "elements": {
+    "drawer#1": {
+      "url": "./drawer.json",
+      "parameters": {
+        "width": "width-2*thickness",
+        "depth": "depth",
+        "height": "drawerHeight",
+        "thickness": "thickness",
+        "material":"material",
+        "processSegment":"processSegment"
+      },
+      "type": "URLElement"
+    },
+    "vlayer": {
+      "url": "./2.json",
+      "parameters": {
+        "width": "depth",
+        "height": "height",
+        "material":"material",
+        "processSegment":"processSegment"
+      },
+
+      "type": "URLElement"
+    },
+    "hlayer": {
+      "url": "./3.json",
+      "parameters": {
+        "width":  "width-2*thickness",
+        "height": "depth",
+        "material":"material",
+        "processSegment":"processSegment"
+      },
+      "type": "URLElement"
+    },
+    "vhlayer": {
+      "url": "./4.json",
+      "parameters": {
+        "width": "width-2*thickness",
+        "height": "height"
+        "material":"material",
+        "processSegment":"processSegment"
+      },
+      "type": "URLElement"
+    }
+  },
+  "nodes": [
+    {
+      "ref": "vlayer"
+    },
+    {
+      "ref": "vlayer",
+      "position": { "x": "width-thickness" }
+    },
+    {
+      "ref": "vhlayer",
+      "position": {
+        "x": "thickness",
+        "z": "-depth"
+      }
+    },
+    {
+      "ref": "hlayer",
+      "position": {
+        "x": "thickness",
+        "y": "80"
+      }
+    },
+    {
+      "ref": "hlayer",
+      "position": {
+        "x": "thickness",
+        "y": "80+18+694"
+      }
+    },
+    {
+      "ref": "hlayer",
+      "position": {
+        "x": "thickness",
+        "y": "height-thickness"
+      }
+    },
+    {
+      "ref": "drawer#1",
+      "position": {
+        "x": "thickness",
+        "y": "98",
+        "z": "90"
+      }
+    },
+    {
+      "ref": "drawer#1",
+      "position": {
+        "x": "thickness",
+        "y": "drawerHeight+98",
+        "z": "60"
+      }
+    },
+    {
+      "ref": "drawer#1",
+      "position": {
+        "x": "thickness",
+        "y": "2*drawerHeight+98",
+        "z": "30"
+      }
+    },
+    {
+      "ref": "drawer#1",
+      "position": {
+        "x": "thickness",
+        "y": "3*drawerHeight+98",
+        "z": "10"
+      }
+    }
+  ]
+}

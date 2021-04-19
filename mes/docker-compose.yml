@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mes:
+    image: thailemall/mes
+    container_name: mes
+    ports:
+      - "8081:8081"
+    environment:
+      EUREKA_DEFAULT_ZONE: http://discovery:8761/eureka
+      RABBITMQ_HOST: rabbit
+      MQTT_URL: tcp://rabbit:1883
+    volumes:
+      - ./docker/upload-model:/var/storage/model
+      - ./docker/design:/var/storage/design
+networks:
+  default:
+    external:
+      name: mes-network
