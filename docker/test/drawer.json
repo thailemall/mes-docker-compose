@@ -1,0 +1,114 @@
+{
+ "name":{"defaultText":"drawer","texts":{"en":"drawer","zh-CN":"抽屉"}},
+ "type":"Unit",
+  "properties": {
+    "width": {
+      "label":{"defaultText":"width", "texts":{"en":"width","zh-CN":"宽度"}},
+      "value": "600.0",
+      "type": "DOUBLE"
+    },
+    "depth": {
+      "label": {"defaultText":"depth","texts":{"en":"depth","zh-CN":"深度"}},
+      "value": "550",
+      "type": "DOUBLE"
+    },
+    "height": {
+      "label": {"defaultText":"height","texts":{"en":"height","zh-CN":"高度"}},
+      "value": "200.0",
+      "type": "DOUBLE"
+    },
+    "thickness": {
+      "label": {"defaultText":"thickness","texts":{"en":"thickness","zh-CN":"厚度"}},
+      "value": "18.0",
+      "type": "DOUBLE"
+    },
+    "material": {
+      "label": {"defaultText":"material", "texts":{"en":"material","zh-CN":"材料"}},
+      "value": "",
+      "type": "MATERIAL"
+    },
+    "processSegment":{
+      "label":  {"defaultText":"process Segment","texts":{"en":"process Segment","zh-CN":"Process Segment"}},
+      "value": "",
+      "type": "PROCESS"
+    }
+  },
+ "elements":{
+     "e1":  {
+          "name":{"defaultText":"vlayer","texts":{"en":"vlayer","zh-CN":"坚板"}},
+          "thickness":"thickness",
+           "type":"VLayer",
+          "profile": {
+            "type": "Rect",
+            "width": "depth-2*thickness",
+            "height": "height-thickness"
+          },
+          "material":"material",
+          "processSegment":"processSegment"
+       },
+     "e2":{
+          "name":{"defaultText":"back-font-layer","texts":{"en":"back-font-layer","zh-CN":"前后板"}},
+          "thickness":"thickness",
+           "type":"HVLayer",
+          "profile": {
+            "type": "Rect",
+            "width": "width",
+            "height": "height-thickness"
+          },
+          "material":"material",
+          "processSegment":"processSegment"
+       },
+       "e3": {
+              "name":{"defaultText":"Bottom-Layer","texts":{"en":"bottom-Layer","zh-CN":"底板"}},
+              "thickness":"thickness",
+              "type":"HLayer",
+               "profile": {
+                  "type":"Rect",
+                  "width":"width",
+                  "height":"depth"
+               },
+              "material":"material",
+              "processSegment":"processSegment"
+         }
+  },
+  "nodes":[
+    {
+
+      "ref": "e3"
+    },
+    {
+
+      "ref": "e2",
+      "position": {
+        "y": "thickness",
+        "z": "-thickness"
+      }
+    },
+    {
+
+      "ref": "e1",
+      "position": {
+        "x": "0",
+        "y": "thickness",
+        "z": "-thickness"
+      }
+    },
+    {
+
+      "ref": "e1",
+      "position": {
+        "x": "width-thickness",
+        "y": "thickness",
+        "z": "-thickness"
+      }
+    },
+    {
+
+      "ref": "e2",
+      "position": {
+        "y": "thickness",
+        "z": "-depth"
+      }
+    }
+  ]
+}

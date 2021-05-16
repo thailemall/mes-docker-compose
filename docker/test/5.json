@@ -1,0 +1,107 @@
+ {
+	"name":{"defaultText":"test"},
+	"type":"Unit",
+	"properties":{
+		"width":{
+      "label":{"defaultText":"width", "texts":{"en":"width","zh-CN":"宽度"}},
+      "value":"600.0","type":"DOUBLE"},
+		"depth":{
+      "label": {"defaultText":"depth","texts":{"en":"depth","zh-CN":"深度"}},
+      "value":"600","type":"DOUBLE"},
+		"height":{
+      "label": {"defaultText":"height","texts":{"en":"height","zh-CN":"高度"}},
+      "value":"2200.0","type":"DOUBLE"},
+		"thickness":{
+      "label": {"defaultText":"thickness","texts":{"en":"thickness","zh-CN":"厚度"}},
+      "value":"18.0","type":"DOUBLE"},
+		"backThickness":{
+      "label": {"defaultText":"back thickness","texts":{"en":"back thickness","zh-CN":"背板厚度"}},
+      "value":"18.0","type":"DOUBLE"},
+		"baseHeight":{
+      "label":{"defaultText":"Base Height","texts":{"en":"Base Height","zh-CN":"基层高度"}},
+      "value":"80","type":"DOUBLE"},
+		"drawerHeight":{
+      "label":{"defaultText":"Drawer Height","texts":{"en":"Drawer Height","zh-CN":"抽屉高度"}},
+      "value":"170","type":"DOUBLE"},
+      "material": {
+        "label": {"defaultText":"material", "texts":{"en":"material","zh-CN":"材料"}},
+        "value": "",
+        "type": "MATERIAL"
+      },
+      "processSegment":{
+        "label":  {"defaultText":"process Segment","texts":{"en":"process Segment","zh-CN":"Process Segment"}},
+        "value": "",
+        "type": "PROCESS"
+      }
+	},
+  "elements": {
+    "drawer#1": {
+      "url": "./drawer.json",
+      "parameters": {
+        "width":  "width-2*thickness",
+        "depth":  "depth",
+        "height": "drawerHeight",
+        "thickness": "thickness",
+        "material":"material",
+        "processSegment":"processSegment"
+      },
+      "type": "URLElement"
+    },
+    "vlayer": {
+      "url": "./2.json",
+      "parameters": {
+        "width": "width",
+        "height": "height",
+        "material":"material",
+        "processSegment":"processSegment"
+      },
+
+      "type": "URLElement"
+    },
+    "hlayer": {
+      "url": "./3.json",
+      "parameters": {
+        "width": "width-2*thickness",
+        "height": "depth",
+        "material":"material",
+        "processSegment":"processSegment"
+      },
+      "type": "URLElement"
+    },
+    "hlayer1": {
+      "url": "./3.json",
+      "parameters": {
+        "width": "width",
+        "height": "depth",
+        "material":"material",
+        "processSegment":"processSegment"
+      },
+      "type": "URLElement"
+    },
+    "vhlayer": {
+      "url": "./4.json",
+      "parameters": {
+        "width": "width-2*thickness",
+        "height": "height",
+        "material":"material",
+        "processSegment":"processSegment"
+      },
+      "type": "URLElement"
+    }
+  },
+  "nodes": [
+    {
+      "ref": "hlayer1",
+      "position": {
+        "x": "thickness"
+      }
+    },
+    {
+      "ref": "hlayer",
+      "position": {
+        "x": "thickness",
+        "z": "80"
+      }
+    }
+  ]
+}
